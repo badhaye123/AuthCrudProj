@@ -1,0 +1,44 @@
+.my_navbar
+{
+   background-color: rgb(250, 192, 0);
+   list-style-type: none;
+   overflow: hidden;
+}
+body
+{
+background-color:light blue
+}
+
+li
+{
+   float: left;
+}
+
+li a
+{
+   display: block;
+   color: black;
+   text-decoration: none;
+   padding: 15px 15px 15px 10px;
+}
+
+li a:hover
+{
+   background-color: rgba(255, 0, 170, 0.362);
+}
+
+header h1
+{
+
+   text-align:left;
+   color:blueviolet;
+
+}
+
+Footer h5
+{
+   background-color: gray;
+   text-align: center;
+   padding: 15px 15px 15px 10px
+}
+

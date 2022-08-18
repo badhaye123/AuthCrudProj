@@ -1,0 +1,42 @@
+{% extends 'App1/base.html' %}
+{% load crispy_forms_tags%}
+
+{% block title %}
+<title>Show orders</title>
+{% endblock %}
+
+{% block content%}
+<table class="table table-dark">
+    <tr>
+        <th>CID</th>
+        <th>Seller</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Mode of Payment</th>
+
+    </tr>
+    {% for Order in ords %}
+    <tr>
+        <td>{{Order.id}}</td> 
+        <td>{{Order.seller}}</td>
+        <td>{{Order.product}}</td>
+        <td>{{Order.quantity}}</td>
+        <td>{{Order.price}}</td>
+<!--         <td>{{Order.is_paid}}</td>-->
+        {% if Order.is_paid %}
+        <td>Prepaid</td>
+        {% else %}
+        <td>Cash On Delivery </td>
+        {% endif %}
+
+        <td><a href="{% url 'update' Order.id %}"><button class="btn btn-warning">Update</button></a></td>
+        <td><a href="{% url 'delete' Order.id %}"><button class="btn btn-danger">Delete</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<a href="{% url 'addorder' %}">
+    <button class="btn btn-success">Add order</button>
+</a>
+{% endblock%}
